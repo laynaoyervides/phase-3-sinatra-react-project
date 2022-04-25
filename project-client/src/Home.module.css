@@ -1,0 +1,25 @@
+.home_container {
+    background-color: #f8f199;
+    padding: 2%;
+}
+h1 {
+    font-family: 'Meriweather', sans-serif;
+    color: #0a37d9;
+}
+h3 {
+    font-family: 'Meriweather', sans-serif;
+    color: #18077c;
+    text-align: left;
+}
+img {
+    width: 45%; 
+}
+a:link {
+    color: #0a37d9;
+}
+a:hover{
+    color: #f8f199;
+}
+a:visited {
+    color: #08022a;
+}

@@ -1,0 +1,17 @@
+body{
+    background-color: #f6eb4c;
+}
+nav{
+    background-color: #2d41f8;
+    display: flex;
+    justify-content: space-between;
+}
+h2 {
+    color:#fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Merriweather, sans-serif;
+
+}
