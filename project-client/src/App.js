@@ -1,6 +1,9 @@
 import './App.css';
 import React from 'react';
+import NavBar from './NavBar';
 import Classes from './Classes';
+import Activity from './Activity';
+import Home from './Home';
 
 function App() {
   return (
