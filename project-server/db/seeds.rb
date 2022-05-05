@@ -96,7 +96,7 @@ Student.create (
 
     ]
 )
-Classe.create!(
+Class.create!(
     [
         { 
             course_name: "Art",
