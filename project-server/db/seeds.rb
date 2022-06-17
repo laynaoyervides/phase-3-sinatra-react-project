@@ -39,25 +39,31 @@ mrr = Instructor.create (
 
 mso.courses.create (
     [{ 
-        course_name: "Art_1"
+        course_name: "Art_1",
+        class_period:1
         },
         {
-        course_name: "Art_2"
+        course_name: "Art_2",
+        class_period:2
 
         },
         {
-        course_name: "Art_3"
+        course_name: "Art_3" ,
+        class_period:3
         },
         {
 
-        course_name: "Art_4"
+        course_name: "Art_4",
+        class_period:4
         },
         {
 
-        course_name: "Art_5"
+        course_name: "Art_5",
+        class_period:5
         },
         {
-        course_name: "Art_6"
+        course_name: "Art_6",
+        class_period:6
         }
     ]
 )
@@ -216,6 +222,7 @@ mrr.courses.create (
 ai = Learner.create ({
     name: "Anikin Indy"
 })  
+
 ad = Learner.create ({
      name:"Asterix Draven"
 })   

@@ -12,12 +12,12 @@ class ApplicationController < Sinatra::Base
     course.to_json
   end
 
-  get "instructors" do
+  get "/instructors" do
     instructor = Instructor.all
     instructor.to_json
   end
 
-  get "enrollments" do 
+  get "/enrollments" do 
     enrollment = Enrollment.all
     enrollment.to_json
   end
