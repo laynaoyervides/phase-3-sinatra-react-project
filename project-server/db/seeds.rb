@@ -63,126 +63,155 @@ mso.courses.create (
 )
 mrs.courses.create (
     [{ 
-        course_name: "ComputerScience_1"
+        course_name: "ComputerScience_1",
+        class_period: 1
         },
         {
-        course_name: "ComputerScience_2"
+        course_name: "ComputerScience_2",
+        class_period:2
 
         },
         {
-        course_name: "ComputerScience_3"
+        course_name: "ComputerScience_3",
+        class_period:3
         },
         {
 
-        course_name: "ComputerScience_4"
+        course_name: "ComputerScience_4",
+        class_period:4
         },
         {
 
-        course_name: "ComputerScience_5"
+        course_name: "ComputerScience_5",
+        class_period:5
+        
         },
         {
-        course_name: "ComputerScience_6"
+        course_name: "ComputerScience_6",
+        class_period:6
         }
     ]
 )
 msg.courses.create (
     [{ 
-        course_name: "Science_1"
+        course_name: "Science_1",
+        class_period:1
         },
         {
-        course_name: "Science_2"
+        course_name: "Science_2",
+        class_period:2
 
         },
         {
-        course_name: "Science_3"
+        course_name: "Science_3",
+        class_period:3
         },
         {
 
-        course_name: "Science_4"
+        course_name: "Science_4",
+        class_period:4
         },
         {
 
-        course_name: "Science_5"
+        course_name: "Science_5",
+        class_period:5
         },
         {
-        course_name: "Science_6"
+        course_name: "Science_6",
+        class_period:6
         }
     ]
 )
 mrp.courses.create (
     [{ 
-        course_name: "Math_1"
+        course_name: "Math_1",
+        class_period:1
         },
         {
-        course_name: "Math_2"
+        course_name: "Math_2",
+        class_period:2
 
         },
         {
-        course_name: "Math_3"
+        course_name: "Math_3",
+        class_period:3
         },
         {
 
-        course_name: "Math_4"
+        course_name: "Math_4",
+        class_period:4
         },
         {
 
-        course_name: "Math_5"
+        course_name: "Math_5",
+        class_period:5
         },
         {
-        course_name: "Math_6"
+        course_name: "Math_6",
+        class_period:6
         }
     ]
 )
 msk.courses.create (
     [{ 
-        course_name: "ELA_1"
+        course_name: "ELA_1",
+        class_period:1
         },
         {
-        course_name: "ELA_2"
+        course_name: "ELA_2",
+        class_period:2
 
         },
         {
-        course_name: "ELA_3"
+        course_name: "ELA_3",
+        class_period:3
         },
         {
 
-        course_name: "ELA_4"
+        course_name: "ELA_4",
+        class_period:4
         },
         {
 
-        course_name: "ELA_5"
+        course_name: "ELA_5",
+        class_period:5
         },
         {
-        course_name: "ELA_6"
+        course_name: "ELA_6",
+        class_period:6
         }
     ]
 )
 mrr.courses.create (
     [{ 
-        course_name: "HIST_1"
+        course_name: "HIST_1",
+        class_period:1
         },
         {
-        course_name: "HIST_2"
+        course_name: "HIST_2",
+        class_period:2
 
         },
         {
-        course_name: "HIST_3"
+        course_name: "HIST_3",
+        class_period:3
         },
         {
 
-        course_name: "HIST_4"
+        course_name: "HIST_4",
+        class_period:4
         },
         {
 
-        course_name: "HIST_5"
+        course_name: "HIST_5",
+        class_period:5
         },
         {
-        course_name: "HIST_6"
+        course_name: "HIST_6",
+        class_period:6
         }
     ]
 )
-
-
 
 ai = Learner.create ({
     name: "Anikin Indy"
