@@ -10,7 +10,7 @@ function CourseItem ({courseName}) {
 
     if (!course) ret<h2> Loading Enrollment Data ...</h2> */
     return (
-            <option value="{courseName}"><h3>{courseName}</h3>
+            <option value="{courseName}">{courseName}
             </option>
             
     );

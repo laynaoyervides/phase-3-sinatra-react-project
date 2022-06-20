@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Enrollments.modules.css"
+import InstructorsList from "./InstructorsList";
 
 
 function Enrollments() {
@@ -8,12 +9,13 @@ function Enrollments() {
             <h1>Enrollments</h1>
             <div className={styles.crud_container}>   
                 <div className={styles.view}> 
-                   <h3>View Course Enrollments</h3>
-                   <p>click on your course to view students in the course or choose all to see all enrollments</p>
-                   
+                   <h3>Instructors</h3>
+                   <p>Add, Edit, or Delete an Instructor</p>
+                   <InstructorsList />
+                   <h3>+ ADD A NEW INSTRUCTOR </h3>
                 </div>
                 <div className={styles.enroll}>
-                    <h3>Enroll a student</h3>
+                    <h3>Add or Delete a Course</h3>
                     <p>Add a student to your course.</p>
                 </div>
                 <div className={styles.delete}>
