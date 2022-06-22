@@ -19,12 +19,8 @@ function Enrollments() {
                     <p>Add a student to your course.</p>
                 </div>
                 <div className={styles.delete}>
-                     <h3>Delete an enrollment </h3>
+                     <h3>ADD OR DELETE A STUDENT ENROLLMENT </h3>
                      <p>Find the student and delete their enrollment</p>
-                </div>
-                <div className={styles.edit}>
-                    <h3>Edit an enrollment</h3>
-                    <p>Change an enrollment using this form.</p>
                 </div>
             </div>
         </div>
