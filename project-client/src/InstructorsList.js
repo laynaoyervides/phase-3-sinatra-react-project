@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InstructorDetail from "./InstructorDetail";
+import NewInstructor from "./NewInstructor";
 
 function InstructorsList () {
     const [instructors, setInstructors] = useState([]);
@@ -11,7 +12,7 @@ function InstructorsList () {
     }, []); 
     
     // Add a new instructor - CREATE - 
-    function addNewInstructor(instructor) {
+    const addNewInstructor= (instructor) => {
         setInstructors([...instructors, instructor]);
     }
     //handle the edit - UPDATE -
@@ -36,9 +37,15 @@ function InstructorsList () {
     return (
         <div>   
             {instructors.map((instructor)=> (
-                <InstructorDetail key={instructor.id} instructorName={instructor.name} instructor={instructor} instructors={instructors} deleteInstructor={deleteInstructor} onUpdateInstructor={handleUpdateInstructor}/>
+                <InstructorDetail key={instructor.id} 
+                instructorName={instructor.name} 
+                instructor={instructor} 
+                instructors={instructors} 
+                deleteInstructor={deleteInstructor} 
+                onUpdateInstructor={handleUpdateInstructor}/>
                 ))
             }
+            <NewInstructor addNewInstructor={addNewInstructor}/>
         </div>
     )
 }

@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
   instructor = Instructor.create(
       name: params[:name]
       )
-      review.to_json
+  instructor.to_json
   end
   get "/enrollments" do 
     enrollment = Enrollment.all

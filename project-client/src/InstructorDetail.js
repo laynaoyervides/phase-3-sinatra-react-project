@@ -1,37 +1,55 @@
 import React, { useState } from "react";
+import EditInstructor from "./EditInstructor";
 
-function InstructorDetail ({instructorName, onDeleteClick, instructor, handleEditClick}) {
-  const [teacher, setTeacher] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentInstructor, setCurrentInstructor] = useState({});
+function InstructorDetail ({instructorName, deleteInstructor, instructor, onUpdateInstructor }) {
+  const {name, id} = instructor;
+  const [isEditing, setIsEditing] =useState(false);
 
-  function handleDeleteInstructor() {
+  function handleDelete () {
+    deleteInstructor(id);
+    fetch(`http://localhost:9292/instructors/${id}`, {
+      method: "DELETE",
+    });
+  };
+
+  /* function handleDeleteInstructor() {
         fetch(`http://localhost:9292/instructors/${instructor.id}`, {
             method: "DELETE",
           })
             .then((r) => r.json())
-            .then((deletedInstructor) => onDeleteClick(deletedInstructor));
-    }
-    function onEditInstructor() {
+            .then((deletedInstructor) => deleteInstructor(deletedInstructor));
+    } */
+    /* function onEditInstructor() {
         fetch (`http://localhost:9292/instructors/${instructor.id}`,{
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name: teacher,
+                name: instructor,
               }),
             })
               .then((r) => r.json())
-              .then((updatedName) => handleEditClick(updatedName));
+              .then((updatedName) => onUpdateInstructors(updatedName));
         }
     
- 
+  */
+
+        const handleInstructorUpdate = (updatedInstructor) => {
+          setIsEditing(false);
+          onUpdateInstructor(updatedInstructor);
+        };
+
     return (
             <div>
                 <h3>{instructorName}</h3>
-                <button onClick={onEditInstructor}><h5>EDIT</h5></button>
-               <button onClick={handleDeleteInstructor}><h5>DELETE</h5></button>
+                { isEditing ?  (
+                  <EditInstructor instructor={instructor} onUpdateInstructor={handleInstructorUpdate}/>
+                ) :
+                ( <p>Name: {name}</p>)
+}
+                <button onClick={() => setIsEditing((isEditing) => !isEditing)}><h5>EDIT</h5></button>
+                <button onClick={handleDelete}><h5>DELETE</h5></button>
             </div>
             
     );

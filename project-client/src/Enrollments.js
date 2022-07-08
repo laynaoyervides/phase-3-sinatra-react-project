@@ -12,15 +12,14 @@ function Enrollments() {
                    <h3>Instructors</h3>
                    <p>Add, Edit, or Delete an Instructor</p>
                    <InstructorsList />
-                  <button><h3>+ ADD A NEW INSTRUCTOR </h3></button>
                 </div>
                 <div className={styles.enroll}>
                     <h3>Add or Delete a Course</h3>
                     <p>Add a student to your course.</p>
                 </div>
                 <div className={styles.delete}>
-                     <h3>ADD OR DELETE A STUDENT ENROLLMENT </h3>
-                     <p>Find the student and delete their enrollment</p>
+                     <h3>VIEW, ADD, OR DELETE A COURSE </h3>
+                     <p>Find the student and delete their enrollment(...Coming Soon...)</p>
                 </div>
             </div>
         </div>
