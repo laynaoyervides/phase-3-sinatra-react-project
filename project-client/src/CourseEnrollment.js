@@ -34,7 +34,18 @@ function CourseEnrollment () {
 }
     return(
         <div>
-            <NewCourse />
+            {courses.map((course) => {
+                <CourseDetail 
+                key={course.id}
+                courseName = {course.course_name}
+                classPeriod={course.class_period}
+                deleteCourse={deleteCourse}
+                onUpdateCoruse={handleUpdateCourse}
+                courses={courses}
+                course={course}
+                />
+            })}
+            <NewCourse addNewCourse={addNewCourse}/>
         </div>
     )
 }
