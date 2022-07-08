@@ -1,12 +1,11 @@
-import React {useState, useEffect}from "react";
+import React, {useState, useEffect} from "react";
 import NewCourse from "./NewCourse";
-import { useEffect, useState } from "react";
 
 function CourseEnrollment () {
     const [courses, setCourses] = useState([])
     //get list of courses
     useEffect ( ()  => {
-        fetch("http://localhost:9292/courses)
+        fetch("http://localhost:9292/courses")
         .then ((r) => r.json())
         .then ((courses) => setCourses(courses));
     }, []);
