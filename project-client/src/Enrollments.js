@@ -19,6 +19,7 @@ function Enrollments() {
                 </div>
                 <div className={styles.delete}>
                      <h3>VIEW, ADD, OR DELETE A COURSE </h3>
+                     
                      <p>Find the student and delete their enrollment(...Coming Soon...)</p>
                 </div>
             </div>
