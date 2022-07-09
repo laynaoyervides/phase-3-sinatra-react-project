@@ -42,11 +42,10 @@ function InstructorDetail ({instructorName, deleteInstructor, instructor, onUpda
 
     return (
             <div>
-                <h3>{instructorName}</h3>
                 { isEditing ?  (
                   <EditInstructor instructor={instructor} onUpdateInstructor={handleInstructorUpdate}/>
                 ) :
-                ( <p>Name: {name}</p>)
+                ( <h3>{name}</h3>)
 }
                 <button onClick={() => setIsEditing((isEditing) => !isEditing)}><h5>EDIT</h5></button>
                 <button onClick={handleDelete}><h5>DELETE</h5></button>

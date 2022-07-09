@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NewCourse from "./NewCourse";
+import CourseDetail from "./CourseDetail";
 
 function CourseEnrollment () {
     const [courses, setCourses] = useState([])
@@ -40,7 +41,7 @@ function CourseEnrollment () {
                 courseName = {course.course_name}
                 classPeriod={course.class_period}
                 deleteCourse={deleteCourse}
-                onUpdateCoruse={handleUpdateCourse}
+                onUpdateCourse={handleUpdateCourse}
                 courses={courses}
                 course={course}
                 />
