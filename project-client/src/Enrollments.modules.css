@@ -7,6 +7,14 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.coursetitle{
+    text-align: center;
+}
+h2{
+    font-size: 24px;
+    background-color: cornflowerblue;
+    padding: 5px;;
+}
 h3 {
     font-size: 18px;
 }
@@ -31,4 +39,14 @@ p {
 .delete{
     flex-basis: 25%;
     background-color: #fff;
+}
+.instructors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.courses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

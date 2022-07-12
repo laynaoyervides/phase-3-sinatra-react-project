@@ -13,9 +13,9 @@ function CourseList () {
         <div>
             <form>
              <select name="teachers" id="teachers">
- {courses.map((course)=> (
-     <CourseItem key={course.id} courseName={course.course_name} course={course}/>
- ))}
+            {courses.map((course)=> (
+            <CourseItem key={course.id} courseName={course.course_name} course={course}/>
+             ))}
  </select>
  <br></br>
              <input type="submit" value="submit"></input>

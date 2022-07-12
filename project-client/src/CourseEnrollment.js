@@ -2,8 +2,9 @@ import React, {useState, useEffect} from "react";
 import NewCourse from "./NewCourse";
 import CourseDetail from "./CourseDetail";
 
-function CourseEnrollment () {
+function CourseEnrollment ({instructors}) {
     const [courses, setCourses] = useState([])
+
     //get list of courses
     useEffect ( ()  => {
         fetch("http://localhost:9292/courses")
@@ -11,9 +12,11 @@ function CourseEnrollment () {
         .then ((courses) => setCourses(courses));
     }, []);
 
+
+    
      // Add a new course - CREATE - 
      const addNewCourse= (course) => {
-        setCourses([...courses, courses]);
+        setCourses([...courses, course]);
     }
     //handle the edit - UPDATE -
     function handleUpdateCourse(updatedCourse){
@@ -32,10 +35,11 @@ function CourseEnrollment () {
         const updatedCourses = courses.filter((course) => 
             course.id !== id);
         setCourses(updatedCourses);
+
 }
     return(
         <div>
-            {courses.map((course) => {
+            {courses.map((course) => (
                 <CourseDetail 
                 key={course.id}
                 courseName = {course.course_name}
@@ -44,9 +48,11 @@ function CourseEnrollment () {
                 onUpdateCourse={handleUpdateCourse}
                 courses={courses}
                 course={course}
+                instructors={instructors}
                 />
-            })}
-            <NewCourse addNewCourse={addNewCourse}/>
+            ))
+        }
+            {/* <NewCourse addNewCourse={addNewCourse} instructors={instructors}/> */}
         </div>
     )
 }

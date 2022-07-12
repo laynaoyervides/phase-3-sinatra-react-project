@@ -27,9 +27,8 @@ class ApplicationController < Sinatra::Base
     course = Course.find(params[:id])
     course.update(
       course_name: params[:course_name],
-      class_period: params[:class_period]
+      class_period: params[:class_period],
       instructor_id: params[:instructor_id]
-
     )
     course.to_json
   end
@@ -38,8 +37,8 @@ class ApplicationController < Sinatra::Base
     # create a new inst. in the database
     # params is a hash of key-value pairs coming from the body of the request
   course = Course.create(
-      course_name: params[:courseName]
-      class_period: params[:class_period]
+      course_name: params[:course_name],
+      class_period: params[:class_period],
       instructor_id: params[:instructor_id]
       )
   course.to_json

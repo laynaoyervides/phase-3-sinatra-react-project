@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import EditCourse from "./EditCourse";
 
-function CourseDetail ({courseName, classPeriod, deleteCourse, onUpdateCourse, course}) {
-    const{id, name, period } = course;
+function CourseDetail ({deleteCourse, onUpdateCourse, course, instructors}) {
+    const{id, course_name, class_period } = course;
     const [isEditing, setIsEditing]= useState(false);
     
     function handleDelete () {
@@ -20,7 +20,7 @@ function CourseDetail ({courseName, classPeriod, deleteCourse, onUpdateCourse, c
             { isEditing ? (
                 <EditCourse course={course} onUpdateCourse={handleCourseUpdate}/>
                 ) :
-                (<h3>{name}{period}</h3>)
+                (<h3>Course Name:{course_name}<br></br>Class Period:{class_period}</h3>)
             }
             <button onClick={() => setIsEditing((isEditing) => !isEditing)}><h5>EDIT</h5></button>
                 <button onClick={handleDelete}><h5>DELETE</h5></button>

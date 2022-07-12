@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 
-function NewCourse ({addNewCourse}) {
-    const [courseName, setCourseName] = useState("")
-    const [classPeriod, setClassPeriod] = useState("")
+function NewCourse ({instructors, addNewCourse}) {
+    const [course_name, setCourse_name] = useState("")
+    const [class_period, setClass_period] = useState("")
     const [instructor, setInstructor] = useState("");
 
     const newCourse = {
@@ -27,11 +27,50 @@ function NewCourse ({addNewCourse}) {
 
         fetch(`http://localhost:9292/courses`, configObj)
         .then ((resp) => resp.json())
-        .then ((course) => addNewCourse(course))
-    }
+        .then ((course) => {addNewCourse(course)
+        });
+    };
+
+
     return(
-        <div></div>
-    )
+        <div>ADD A NEW COURSE
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="coursename">Course Name:</label>
+                <input 
+                    id="coursename"
+                    type="text"
+                    placeholder="Course Name"
+                    name="coursename"
+                    value={course_name}
+                    onChange={(e) => setCourse_name(e.target.value)}
+                    />
+                <label htmlFor="classperiod">Class Period</label>
+                <input
+                    id="period"
+                    type="text"
+                    placeholder="class period (#)"
+                    name="period"
+                    value={class_period}
+                    onChange={(e)=> setClass_period(e.target.value)}
+                    />
+                <label>Instructor
+                <select
+                    placeholder="Select an Instructor"
+                    onChange={(e)=> setInstructor(e.target.value)}
+                    >
+                        <option value="none">Select an instructor:</option>
+                    {instructors.map((instructor)=>
+                    (
+                        <option key={instructor.id} value={instructor.id}>
+                            {instructor.name}
+                        </option>
+                    ))}
+                    </select>
+                </label>
+        <button type="submit">Create Course</button>
+        </form>
+        </div>
+    );
 }
 
 export default NewCourse;
