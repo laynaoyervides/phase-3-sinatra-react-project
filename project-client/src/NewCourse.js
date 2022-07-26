@@ -33,8 +33,9 @@ function NewCourse ({instructors, addNewCourse}) {
 
 
     return(
-        <div>ADD A NEW COURSE
-        <form onSubmit={handleSubmit}>
+        <div>
+            <h3>ADD A NEW COURSE</h3>
+            <form onSubmit={handleSubmit}>
             <label htmlFor="coursename">Course Name:</label>
                 <input 
                     id="coursename"

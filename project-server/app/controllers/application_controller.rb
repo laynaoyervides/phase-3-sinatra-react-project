@@ -49,8 +49,8 @@ class ApplicationController < Sinatra::Base
 #instructor ROUTES
 
   get "/instructors" do
-    instructor = Instructor.all
-    instructor.to_json
+  instructors = Instructor.all
+    instructors.to_json
   end
 
   delete '/instructors/:id' do
@@ -75,6 +75,11 @@ class ApplicationController < Sinatra::Base
       )
   instructor.to_json
   end
+
+  get '/instructors/:id' do
+    instructor = Instructor.all
+    instructor.to_json
+  end 
 
   #enrollments ROUTES
   get "/enrollments" do 

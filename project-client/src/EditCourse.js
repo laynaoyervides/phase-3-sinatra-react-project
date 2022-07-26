@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 
-function EditCourse (course, onUpdateCourse) {
+function EditCourse ({course, onUpdateCourse, instructors}) {
     const {id, course_name, class_period}=course;
     const[updatedName, setUpdatedName]=useState(course_name);
     const[updatedPeriod, setUpdatedPeriod]= useState(class_period);
+    const [instructor, setInstructor]=useState("")
+
+    const changeCourse = {
+      course_name: updatedName,
+      class_period: updatedPeriod,
+      instuctor_id: (instructor.id)
+    }
 
     function handleEditForm(e) {
     e.preventDefault();
@@ -14,7 +21,7 @@ function EditCourse (course, onUpdateCourse) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ course_name: updatedName, class_period: updatedPeriod }),
+      body: JSON.stringify(changeCourse),
     })
       .then((resp) => resp.json())
       .then((updatedCourse) => onUpdateCourse(updatedCourse));
@@ -37,6 +44,20 @@ function EditCourse (course, onUpdateCourse) {
                 value={updatedPeriod}
                 onChange={(e)=>setUpdatedPeriod(e.target.value)}
             />
+            <label>Instructor
+                <select
+                    placeholder="Select an Instructor"
+                    onChange={(e)=> setInstructor(e.target.value)}
+                    >
+                        <option value="none">Select an instructor:</option>
+                    {instructors.map((instructor)=>
+                    (
+                        <option key={instructor.id} value={instructor.id}>
+                            {instructor.name}
+                        </option>
+                    ))}
+                    </select>
+                </label>
             <input type="submit" value="Save" />
         </form>
     )

@@ -52,7 +52,7 @@ function CourseEnrollment ({instructors}) {
                 />
             ))
         }
-            {/* <NewCourse addNewCourse={addNewCourse} instructors={instructors}/> */}
+            <NewCourse addNewCourse={addNewCourse} instructors={instructors}/> 
         </div>
     )
 }
