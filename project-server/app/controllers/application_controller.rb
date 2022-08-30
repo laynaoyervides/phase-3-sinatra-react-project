@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 #learner ROUTES
   get "/learners" do
     learner = Learner.all
-    learner.to_json
+    learner.to_json 
   end
 #course ROUTES
   get "/courses" do
@@ -34,8 +34,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/courses' do
-    # create a new inst. in the database
-    # params is a hash of key-value pairs coming from the body of the request
   course = Course.create(
       course_name: params[:course_name],
       class_period: params[:class_period],
@@ -49,8 +47,7 @@ class ApplicationController < Sinatra::Base
 #instructor ROUTES
 
   get "/instructors" do
-  instructors = Instructor.all
-    instructors.to_json
+  Instructor.all.to_json(include: :courses)
   end
 
   delete '/instructors/:id' do

@@ -31,9 +31,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/laynao
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-## Licensing
-The app is available as open source under the terms of the MIT License.
-
+## Copyright
+Copyright 2022 by Layna Oyervides, SiteZinger
 ## Resources
 
 - [create-react-app][]
